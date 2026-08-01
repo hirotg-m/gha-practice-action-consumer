@@ -1,9 +1,14 @@
 name: Hello
 on: push
 jobs:
-  hello:
+  job1-hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, world!"
+      - run: echo "Hello, world1!"
       - uses: actions/checkout@v4
 
+  job2-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, world2!"
+      - uses: actions/checkout@v4
