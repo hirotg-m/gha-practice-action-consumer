@@ -1,0 +1,21 @@
+name: Compare functions
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env:
+      CONTAINS_FUNC1: ${{ contains('Hello World', 'World') }}
+      CONTAINS_FUNC2: ${{ contains('Hello World', 'test') }}
+      STARTS_WITH_FUNC1: ${{ startsWith('Hello World', 'Hello') }}
+      STARTS_WITH_FUNC2: ${{ startsWith('Hello World', 'test') }}
+      ENDS_WITH_FUNC1: ${{ endsWith('Hello World', 'World') }}
+      ENDS_WITH_FUNC2: ${{ endsWith('Hello World', 'test') }}
+    steps:
+      - name: Print functions
+        run: |
+          echo "Contains function1 is $CONTAINS_FUNC1"
+          echo "Contains function2 is $CONTAINS_FUNC2"
+          echo "Starts with function1 is $STARTS_WITH_FUNC1"
+          echo "Starts with function2 is $STARTS_WITH_FUNC2"
+          echo "Ends with function1 is $ENDS_WITH_FUNC1"
+          echo "Ends with function2 is $ENDS_WITH_FUNC2"
