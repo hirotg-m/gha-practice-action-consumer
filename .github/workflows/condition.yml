@@ -1,0 +1,16 @@
+name: Conditions
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print conditions1
+        run: echo "hello1"
+        if: true
+      - name: Print conditions2
+        run: echo "hello2"
+        if: false
+      - name: Print conditions3
+        run: echo "hello3"
+        if: true
