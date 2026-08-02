@@ -1,0 +1,26 @@
+name: Hello
+on: push
+jobs:
+  job1-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, world1!"
+      - uses: actions/checkout@v4
+
+  job2-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: s1
+        run: echo "Hello, world s1!"
+      - name: s2
+        run: |
+          ls -la
+          tree -a .
+          echo "Hello, world s2!"
+      - name: s3
+        uses: actions/checkout@v4
+      - name: s4
+        run: |
+          ls -la
+          tree -a .
+          echo "Hello, world s4!"
