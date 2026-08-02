@@ -1,0 +1,12 @@
+name: Variables Workflow
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    environment: TEST1
+    env:
+      VAR1: ${{ vars.A1 }}
+      VAR2: ${{ vars.A2 }}
+    steps:
+      - run: echo "var1 ${VAR1}"
+      - run: echo "var2 ${VAR2}"
