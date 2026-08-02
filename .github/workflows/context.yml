@@ -1,0 +1,14 @@
+name: Contexts
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print context
+        run: |
+          echo "run_id is ${{ github.run_id }}"
+          echo "head_ref is ${{ github.head_ref }}"
+          echo "workspace is ${{ github.workspace }}"
+          echo "repository is ${{ github.repository }}"
+          echo "repository_owner is ${{ github.repository_owner }}"
+          echo "event is ${{ github.event_name }}"
