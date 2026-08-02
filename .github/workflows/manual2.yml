@@ -1,0 +1,17 @@
+name: Manual2
+on:
+  workflow_dispatch:
+    inputs:
+      log-level:
+        type: choice
+        options:
+          - info
+          - warn
+          - error
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print log level
+        run: echo "Log level is ${{ inputs.log-level }}"
