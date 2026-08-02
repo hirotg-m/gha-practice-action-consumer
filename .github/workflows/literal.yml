@@ -1,0 +1,23 @@
+name: Literals
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    env:
+      LITERAL_STRING1: "Hello World"
+      LITERAL_NUMBER1: 12345
+      LITERAL_NUMBER2: 123.45
+      LITERAL_NUMBER3: 0x1A
+      LITERAL_BOOLEAN1: true
+      LITERAL_BOOLEAN2: false
+      LITERAL_NULL: null
+    steps:
+      - name: Print literals
+        run: |
+          echo "Literal string is '$LITERAL_STRING1'"
+          echo "Literal number1 is $LITERAL_NUMBER1"
+          echo "Literal number2 is $LITERAL_NUMBER2"
+          echo "Literal number3 is $LITERAL_NUMBER3"
+          echo "Literal boolean1 is $LITERAL_BOOLEAN1"
+          echo "Literal boolean2 is $LITERAL_BOOLEAN2"
+          echo "Literal null is $LITERAL_NULL"
