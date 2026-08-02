@@ -19,3 +19,13 @@ jobs:
           echo "Starts with function2 is $STARTS_WITH_FUNC2"
           echo "Ends with function1 is $ENDS_WITH_FUNC1"
           echo "Ends with function2 is $ENDS_WITH_FUNC2"
+  job2:
+    runs-on: ubuntu-latest
+    env:
+      FORMAT_FUNC1: ${{ format('Hello {0}', 'World') }}
+      FORMAT_FUNC2: ${{ format('a{0}, b{1}', 'World', 'test') }}
+    steps:
+      - name: Print functions
+        run: |
+          echo "Format function1 is $FORMAT_FUNC1"
+          echo "Format function2 is $FORMAT_FUNC2"
