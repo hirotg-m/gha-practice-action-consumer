@@ -14,3 +14,10 @@ jobs:
       - name: Print conditions3
         run: echo "hello3"
         if: true
+  job2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: exit 1
+      - run: echo "hello4"
+        if: ${{ failure() }}
