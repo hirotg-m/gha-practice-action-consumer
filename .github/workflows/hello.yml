@@ -10,12 +10,17 @@ jobs:
   job2-hello:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: s1
+        run: echo "Hello, world s1!"
+      - name: s2
+        run: |
           ls -la
           tree -a .
-          echo "Hello, world2!"
-      - uses: actions/checkout@v4
-      - run: |
+          echo "Hello, world s2!"
+      - name: s3
+        uses: actions/checkout@v4
+      - name: s4
+        run: |
           ls -la
           tree -a .
-          echo "Hello, world4!"
+          echo "Hello, world s4!"
